@@ -1,0 +1,1204 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>分析过程</title>
+    <script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel/owl.theme.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/onescroll/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/onescroll/css/component.css" />
+    <link rel="stylesheet" type="text/css" href="assets/plugins/headereffects/css/component.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/headereffects/css/normalize.css" />
+    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css"
+        media="screen" />   
+    <link href="assets/css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+    <!-- BEGIN CORE CSS FRAMEWORK -->
+    <link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css" />
+    <!-- END CORE CSS FRAMEWORK -->
+    <!-- BEGIN CSS TEMPLATE -->
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/magic_space.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" type="text/css" />
+    <!-- END CSS TEMPLATE -->
+    <script type="text/javascript" src="assets/plugins/jquery-1.8.3.min.js"></script>
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script type="text/javascript" src="assets/plugins/slider-plugin/js/slider1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/slider-plugin/js/slider2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/plugins/slider-plugin/css/settings.css"
+        media="screen" />
+</head>
+<!-- END HEAD -->
+<body>
+    <div class="main-wrapper">
+        <div role="navigation" class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="compressed">
+                    <div class="navbar-header">
+                        <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle"
+                            type="button">
+                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a href="#" class="navbar-brand compressed">
+                            <img src="assets/img/校徽黑.png" alt="" data-src="assets/img/校徽黑.png"
+                                data-src-retina="assets/img/校徽黑2x.png" width="160" height="40" /></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="首页.html">首页</a></li>
+                            <li><a href="数据处理.html">数据处理</a></li>
+                            <li><a href="分析过程.html">分析过程</a></li>
+                           <!-- <li><a href="个性推荐.html">个性推荐</a></li>-->
+                    
+                        </ul>
+                    </div>
+        
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="section white text-center m-t-60 p-t-40 p-b-40" id="banner-footer">
+            <h2 class="normal m-b-10">
+                分析过程</h2>
+
+        </div>
+        <div id="cbp-so-scroller" class="cbp-so-scroller section color ha-waypoint green-icons"
+            data-animate-down="ha-header-color" data-animate-up="ha-header-hide">
+            <section class="cbp-so-section">
+                <!--分析点一-->
+                <figure class="cbp-so-side cbp-so-side-left">
+                    	<div id="chart1" style="width: 800px; height: 450px;"></div>
+                            <script>
+                                var chart = document.getElementById('chart1');
+                                var myChart = echarts.init(chart);
+                                var option = {
+                                    title: { 
+                                        left: '35%',
+                                        text: '不同区域各评分段的商家数量' 
+                                        },
+                                    tooltip: { },
+                                    legend: {                                           
+                                            y : 'bottom',
+                                            data:['武昌地区','汉口地区','汉阳地区','新城地区']
+                                            },
+                                    xAxis: { 
+                                        name: '评分(分)',
+                                        data: [  "[0,3]", "[3-4]", "(4-5]" ] 
+                                        },
+                                    yAxis: { 
+                                        name: '商家数量（个）'
+                                    },
+
+                                    series: 
+                                    [
+                                        {
+                                        name: '武昌地区',
+                                        type: 'bar',
+                                        data: [48, 231, 211]
+                                        },
+
+                                        {
+                                        name: '汉口地区',
+                                        type: 'bar',
+                                        data: [26, 158, 210]
+                                        },
+
+                                        {
+                                        name: '汉阳地区',
+                                        type: 'bar',
+                                        data: [6, 30, 19]
+                                        },
+
+                                        {
+                                        name: '新城地区',
+                                        type: 'bar',
+                                        data: [33, 105, 45]
+                                        }
+
+                                    ]
+                                };
+                                myChart.setOption(option);	
+                            </script>
+                 </figure>
+                 <article class="cbp-so-side cbp-so-side-right text-center middle">
+                        <div class="row">
+                            <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                <i class="fa fa-check-circle-o fa-4x"></i>
+                                <h1 class="m-b-20">ONE</h1>
+                                <h1 class="m-b-20">
+                                    <span class="semi-bold">不同区域各评分段的商家数量</span></h1>   
+                                <p>
+                                     
+                                </p>
+                                <h1 class="m-b-20">
+                                        <span class="light">武昌、汉口、汉阳、新城</span></h1>  
+                                    <br>
+                               
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                                <section class="cbp-so-section">
+                                    <article class="cbp-so-side cbp-so-side-left text-center middle">
+                                        <div class="row">
+                                            <div class="col-md-12 p-t-40 col-vlg-8 col-vlg-offset-2">
+                                                <i class="fa fa-check-circle-o fa-4x"></i>
+                                                    <h1 class="m-b-20">TWO</h1>
+                                                    <h1 class="m-b-20">
+                                                        <span class="semi-bold">不同区域各价位的商家数量</span></h1>   
+                                                    <p>
+                                                        
+                                                    </p>
+                                                    <h1 class="m-b-20">
+                                                            <span class="light">武昌、汉口、汉阳、新城</span></h1>  
+                                                        <br>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <figure class="cbp-so-side cbp-so-side-right">
+                                            <div id="chart2" style="width: 800px; height: 450px;"></div>
+                                            <script>
+                                                var chart = document.getElementById('chart2');
+                                                var myChart = echarts.init(chart);
+                                                var option = {
+                                                    title: { 
+                                                        left: '35%',
+                                                        text: '不同区域各价位商家数量' },
+                                                    tooltip: { },
+                                                    legend: { 
+                                                        y : 'bottom',
+                                                        data:['武昌地区','汉口地区','汉阳地区','新城地区'] 
+                                                        },
+                                                    xAxis: { 
+                                                        name: '价格(元)',
+                                                        data: [  "[0,50]", "(50,100]", "(100,200]","(200,+∞)"  ] },
+                                                    yAxis: {
+                                                        name: '商家数量(个)'
+                                                    },
+                                                    series: 
+                                                    [
+                                                        {
+                                                        name: '武昌地区',
+                                                        type: 'bar',
+                                                        data: [313, 94, 29,11]
+                                                        },
+                                    
+                                                        {
+                                                        name: '汉口地区',
+                                                        type: 'bar',
+                                                        data: [164,104,70,20]
+                                                        },
+                                    
+                                                        {
+                                                        name: '汉阳地区',
+                                                        type: 'bar',
+                                                        data: [33,15,1,0]
+                                                        },
+                                    
+                                                        {
+                                                        name: '新城地区',
+                                                        type: 'bar',
+                                                        data: [126,37,6,1]
+                                                        }
+                                    
+                                                    ]
+                                                };
+                                                myChart.setOption(option);	
+                                            </script>
+                                    </figure>
+                                </section>
+    
+                                <section class="cbp-so-section">
+                                    <figure class="cbp-so-side cbp-so-side-left">
+                                            <div id="chart3" style="width: 900px; height: 450px;"></div>
+                                            <script>
+                                                var chart = document.getElementById('chart3');
+                                                var myChart = echarts.init(chart);
+                                                var option = {
+                                                    title: { 
+                                                        left: '35%',
+                                                        text: '不同菜系各评分段商家数量' },
+                                                    tooltip: { },
+                                                    legend: { 
+                                                        y:'bottom',
+                                                        data: [  '韩国菜','日式小吃','居酒屋','日式铁板烧','日本菜','日料自助','日式快餐','日式面条','日式烧烤/烤肉','日式寿司'] 
+                                                         },
+                                                    xAxis: { 
+                                                        name:'评分(分)',
+                                                        data: [   "[0,3]", "(3-4]", "(4-5]" ] },
+                                                    yAxis: {
+                                                        name:'商家数量(个)'
+                                                    },
+                                                    series: 
+                                                    [
+                                                        {
+                                                        name: '韩国菜',
+                                                        type: 'bar',
+                                                        data: [0,8,5]
+                                                        },
+                                    
+                                                        {
+                                                        name: '日式小吃',
+                                                        type: 'bar',
+                                                        data: [5,28,2]
+                                                        },
+                                    
+                                                        {
+                                                        name: '居酒屋',
+                                                        type: 'bar',
+                                                        data: [0,7,10]
+                                                        },
+                                    
+                                                        {
+                                                        name: '日式铁板烧',
+                                                        type: 'bar',
+                                                        data: [14,19,5]
+                                                        },
+                                    
+                                                        {
+                                                        name: '日本菜',
+                                                        type: 'bar',
+                                                        data: [14,43,70]
+                                                        },
+                                    
+                                                        {
+                                                        name: '日料自助',
+                                                        type: 'bar',
+                                                        data: [0,0,1]
+                                                        },
+                                    
+                                                        {
+                                                        name: '日式快餐',
+                                                        type: 'bar',
+                                                        data: [0,0,2]
+                                                        },
+                                    
+                                                        {
+                                                        name: '日式面条',
+                                                        type: 'bar',
+                                                        data: [0,0,2]
+                                                        },
+                                    
+                                                        {
+                                                        name: '日式烧烤/烤肉',
+                                                        type: 'bar',
+                                                        data: [3,15,17]
+                                                        },
+                                    
+                                                        {
+                                                        name: '日式寿司',
+                                                        type: 'bar',
+                                                        data: [16,66,27]
+                                                        }
+                                                    ]
+                                                };
+                                                myChart.setOption(option);	
+                                            </script>   
+                                            <a name="武昌"></a>
+                                    </figure>
+                                    <article class="cbp-so-side cbp-so-side-right text-center middle">
+                                        <div class="row">
+                                            <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                <i class="fa fa-check-circle-o fa-4x"></i>
+                                                <h1 class="m-b-20">THREE</h1>
+                                                <h1 class="m-b-20">
+                                                    <span class="semi-bold">不同菜系各评分段的商家数量</span></h1>   
+                                                <p>
+                                                    
+                                                </p>
+                                                <h1 class="m-b-20">
+                                                        <span class="light">韩国菜、日式小吃、居酒屋、<br>
+                                                            日式铁板烧、日本菜、日料自助、<br>
+                                                            日式快餐、日式面条、日式烧烤/烤肉、日式寿司</span></h1>  
+                                                    <br>
+                                                
+                                            </div>
+                                        </div>
+                                    </article>
+                                </section>
+
+                                <section class="cbp-so-section">
+                                        <article class="cbp-so-side cbp-so-side-left text-center middle">
+                                            <div class="row">
+                                                <p>切换地区：
+                                                    <a href="#武昌">武昌地区        </a>
+                                                    <a href="#汉口">汉口地区        </a>
+                                                    <a href="#汉阳">汉阳地区        </a>
+                                                    <a href="#新城">新城地区        </a>
+                                                    <a href="#武汉全市">武汉全市        </a>
+                                                </p>
+                                                <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                    <i class="fa fa-check-circle-o fa-4x"></i>
+                                                    <h1 class="m-b-20">FOUR</h1>
+                                                    <h1 class="m-b-20">
+                                                        <span class="semi-bold">不同区域的菜系分布</span></h1>   
+                                                    <p>
+                                                        
+                                                    </p>
+                                                    <h1 class="m-b-20">
+                                                            <span class="light">武昌地区</span></h1>   
+                                                    <br>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <figure class="cbp-so-side cbp-so-side-right">
+                                                <div id="chart4" style="width: 800px; height: 500px;"></div>
+                                                <script>
+                                                    var chart = document.getElementById('chart4');
+                                                    var myChart = echarts.init(chart);
+                                                    var option = {
+                                                            title : {
+                                                                text: '不同区域的菜系分布',
+                                                                subtext: '武昌地区',
+                                                                x:'center'
+                                                            },
+                                                            tooltip : {
+                                                                trigger: 'item',
+                                                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                                            },
+                                                            legend: {
+                                                                x : 'center',
+                                                                y : 'bottom',
+                                                                data:['韩国菜','日式小吃','居酒屋','日式铁板烧','日本菜','日料自助','日式快餐','日式面条','日式烧烤/烤肉','日式寿司']
+                                                            },
+                                                            toolbox: {
+                                                                show : true,
+                                                                feature : {
+                                                                    mark : {show: true},
+                                                                    dataView : {show: true, readOnly: false},
+                                                                    magicType : {
+                                                                        show: true, 
+                                                                        type: 'pie'
+                                                                    },
+                                                                    restore : {show: true},
+                                                                    saveAsImage : {show: true}
+                                                                }
+                                                            },
+                                                            calculable : true,
+                                                            series : [
+                                                                {
+                                                                    name:'面积模式',
+                                                                    type:'pie',
+                                                                    radius : [40, 150],
+                                                                    center : ['50%', 240],
+                                                                    roseType : 'area',
+                                                                    x: '50%',               // for funnel
+                                                                    max: 40,                // for funnel
+                                                                    sort : 'ascending',     // for funnel
+                                                                    data:[
+                                                                        {value:43, name:'韩国菜'},
+                                                                        {value:22, name:'日式小吃'},
+                                                                        {value:14, name:'居酒屋'},
+                                                                        {value:63, name:'日式铁板烧'},
+                                                                        {value:31, name:'日本菜'},
+                                                                        {value:33, name:'日料自助'},
+                                                                        {value:17, name:'日式快餐'},
+                                                                        {value:34, name:'日式面条'},
+                                                                        {value:23, name:'日式烧烤/烤肉'},
+                                                                        {value:17, name:'日式寿司'}                                                                    ]
+                                                                }
+                                                            ]
+                                                        };
+                                                        myChart.setOption(option);	
+                                                </script>
+                                                <a name="汉口"></a>
+                                        </figure>
+                                    </section>
+                                <section class="cbp-so-section">
+                                            <article class="cbp-so-side cbp-so-side-left text-center middle">
+                                                <div class="row">
+                                                        <p>切换地区：
+                                                                <a href="#武昌">武昌地区        </a>
+                                                                <a href="#汉口">汉口地区        </a>
+                                                                <a href="#汉阳">汉阳地区        </a>
+                                                                <a href="#新城">新城地区        </a>
+                                                                <a href="#武汉全市">武汉全市        </a>
+                                                            </p>
+                                                    <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                        <i class="fa fa-check-circle-o fa-4x"></i>
+                                                        <h1 class="m-b-20">FOUR</h1>
+                                                        <h1 class="m-b-20">
+                                                            <span class="semi-bold">不同区域的菜系分布</span></h1>   
+                                                        <p>
+                                                            
+                                                        </p>
+                                                        <h1 class="m-b-20">
+                                                                <span class="light">汉口地区</span></h1>  
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                            <figure class="cbp-so-side cbp-so-side-right">
+                                                    <div id="chart5" style="width: 800px; height: 500px;"></div>
+                                                    <script>
+                                                        var chart = document.getElementById('chart5');
+                                                        var myChart = echarts.init(chart);
+                                                        var option = {
+                                                                title : {
+                                                                    text: '不同区域的菜系分布',
+                                                                    subtext: '汉口地区',
+                                                                    x:'center'
+                                                                },
+                                                                tooltip : {
+                                                                    trigger: 'item',
+                                                                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                                                },
+                                                                legend: {
+                                                                    x : 'center',
+                                                                    y : 'bottom',
+                                                                    data:['韩国菜','日式小吃','居酒屋','日式铁板烧','日本菜','日料自助','日式快餐','日式面条','日式烧烤/烤肉','日式寿司']
+                                                                },
+                                                                toolbox: {
+                                                                    show : true,
+                                                                    feature : {
+                                                                        mark : {show: true},
+                                                                        dataView : {show: true, readOnly: false},
+                                                                        magicType : {
+                                                                            show: true, 
+                                                                            type: ['pie']
+                                                                        },
+                                                                        restore : {show: true},
+                                                                        saveAsImage : {show: true}
+                                                                    }
+                                                                },
+                                                                calculable : true,
+                                                                series : [
+                                                                    {
+                                                                        name:'面积模式',
+                                                                        type:'pie',
+                                                                        radius : [40, 150],
+                                                                        center : ['50%', 240],
+                                                                        roseType : 'area',
+                                                                        x: '50%',               // for funnel
+                                                                        max: 40,                // for funnel
+                                                                        sort : 'ascending',     // for funnel
+                                                                        data:[
+                                                                            {value:34, name:'韩国菜'},
+                                                                            {value:11, name:'日式小吃'},
+                                                                            {value:7, name:'居酒屋'},
+                                                                            {value:44, name:'日式铁板烧'},
+                                                                            {value:17, name:'日本菜'},
+                                                                            {value:34, name:'日料自助'},
+                                                                            {value:25, name:'日式快餐'},
+                                                                            {value:24, name:'日式面条'},
+                                                                            {value:24, name:'日式烧烤/烤肉'},
+                                                                            {value:6, name:'日式寿司'}                                                                        ]
+                                                                    }
+                                                                ]
+                                                            };
+                                                            myChart.setOption(option);	
+                                                    </script>
+                                                    <a name="汉阳"></a>
+                                            </figure>
+                                    </section>
+                                <section class="cbp-so-section">
+                                                <figure class="cbp-so-side cbp-so-side-left">
+                                                        <div id="chart6" style="width: 800px; height: 500px;"></div>
+                                                            <script>
+                                                                var chart = document.getElementById('chart6');
+                                                                var myChart = echarts.init(chart);
+                                                                var option = {
+                                                                        title : {
+                                                                            text: '不同区域的菜系分布',
+                                                                            subtext: '汉阳地区',
+                                                                            x:'center'
+                                                                        },
+                                                                        tooltip : {
+                                                                            trigger: 'item',
+                                                                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                                                        },
+                                                                        legend: {
+                                                                            x : 'center',
+                                                                            y : 'bottom',
+                                                                            data:['韩国菜','日式小吃','居酒屋','日式铁板烧','日本菜','日料自助','日式快餐','日式面条','日式烧烤/烤肉','日式寿司']
+                                                                        },
+                                                                        toolbox: {
+                                                                            show : true,
+                                                                            feature : {
+                                                                                mark : {show: true},
+                                                                                dataView : {show: true, readOnly: false},
+                                                                                magicType : {
+                                                                                    show: true, 
+                                                                                    type: ['pie', 'funnel']
+                                                                                },
+                                                                                restore : {show: true},
+                                                                                saveAsImage : {show: true}
+                                                                            }
+                                                                        },
+                                                                        calculable : true,
+                                                                        series : [
+                                                                            {
+                                                                                name:'面积模式',
+                                                                                type:'pie',
+                                                                                radius : [40, 150],
+                                                                                center : ['50%', 240],
+                                                                                roseType : 'area',
+                                                                                x: '50%',               // for funnel
+                                                                                max: 40,                // for funnel
+                                                                                sort : 'ascending',     // for funnel
+                                                                                data:[
+                                                                                    {value:3, name:'韩国菜'},
+                                                                                    {value:1, name:'日式小吃'},
+                                                                                    {value:13, name:'居酒屋'},
+                                                                                    {value:5, name:'日式铁板烧'},
+                                                                                    {value:4, name:'日本菜'},
+                                                                                    {value:0, name:'日料自助'},
+                                                                                    {value:5, name:'日式快餐'},
+                                                                                    {value:5, name:'日式面条'},
+                                                                                    {value:6, name:'日式烧烤/烤肉'},
+                                                                                    {value:1, name:'日式寿司'}
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    };
+                                                                    myChart.setOption(option);	
+                                                            </script>
+                                                            <a name="新城"></a>
+                                                </figure>
+                                                <article class="cbp-so-side cbp-so-side-right text-center middle">
+                                                    <div class="row">
+                                                            <p>切换地区：
+                                                                    <a href="#武昌">武昌地区        </a>
+                                                                    <a href="#汉口">汉口地区        </a>
+                                                                    <a href="#汉阳">汉阳地区        </a>
+                                                                    <a href="#新城">新城地区        </a>
+                                                                    <a href="#武汉全市">武汉全市        </a>
+                                                                </p>
+                                                        <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                            <i class="fa fa-check-circle-o fa-4x"></i>
+                                                        <h1 class="m-b-20">FOUR</h1>
+                                                        <h1 class="m-b-20">
+                                                            <span class="semi-bold">不同区域的菜系分布</span></h1>   
+                                                        <p>
+                                                            
+                                                        </p>
+                                                        <h1 class="m-b-20">
+                                                                <span class="light">汉阳地区</span></h1>  
+                                                        <br>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                    </section>
+                                <section class="cbp-so-section">
+                                                    <figure class="cbp-so-side cbp-so-side-left">
+                                                            <div id="chart7" style="width: 800px; height: 500px;"></div>
+                                                                <script>
+                                                                    var chart = document.getElementById('chart7');
+                                                                    var myChart = echarts.init(chart);
+                                                                    var option = {
+                                                                            title : {
+                                                                                text: '不同区域的菜系分布',
+                                                                                subtext: '新城地区',
+                                                                                x:'center'
+                                                                            },
+                                                                            tooltip : {
+                                                                                trigger: 'item',
+                                                                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                                                            },
+                                                                            legend: {
+                                                                                x : 'center',
+                                                                                y : 'bottom',
+                                                                                data:['韩国菜','日式小吃','居酒屋','日式铁板烧','日本菜','日料自助','日式快餐','日式面条','日式烧烤/烤肉','日式寿司']
+                                                                            },
+                                                                            toolbox: {
+                                                                                show : true,
+                                                                                feature : {
+                                                                                    mark : {show: true},
+                                                                                    dataView : {show: true, readOnly: false},
+                                                                                    magicType : {
+                                                                                        show: true, 
+                                                                                        type: ['pie', 'funnel']
+                                                                                    },
+                                                                                    restore : {show: true},
+                                                                                    saveAsImage : {show: true}
+                                                                                }
+                                                                            },
+                                                                            calculable : true,
+                                                                            series : [
+                                                                                {
+                                                                                    name:'面积模式',
+                                                                                    type:'pie',
+                                                                                    radius : [40, 150],
+                                                                                    center : ['50%', 240],
+                                                                                    roseType : 'area',
+                                                                                    x: '50%',               // for funnel
+                                                                                    max: 40,                // for funnel
+                                                                                    sort : 'ascending',     // for funnel
+                                                                                    data:[
+                                                                                        {value:7, name:'韩国菜'},
+                                                                                        {value:3, name:'日式小吃'},
+                                                                                        {value:10, name:'居酒屋'},
+                                                                                        {value:14, name:'日式铁板烧'},
+                                                                                        {value:5, name:'日本菜'},
+                                                                                        {value:2, name:'日料自助'},
+                                                                                        {value:3, name:'日式快餐'},
+                                                                                        {value:10, name:'日式面条'},
+                                                                                        {value:11, name:'日式烧烤/烤肉'},
+                                                                                        {value:0, name:'日式寿司'}]
+                                                                                }
+                                                                            ]
+                                                                        };
+                                                                        myChart.setOption(option);	
+                                                                </script>
+                                                                <a name="武汉全市"></a>
+                                                    </figure>
+                                                    <article class="cbp-so-side cbp-so-side-right text-center middle">
+                                                        <div class="row">
+                                                                <p>切换地区：
+                                                                        <a href="#武昌">武昌地区        </a>
+                                                                        <a href="#汉口">汉口地区        </a>
+                                                                        <a href="#汉阳">汉阳地区        </a>
+                                                                        <a href="#新城">新城地区        </a>
+                                                                        <a href="#武汉全市">武汉全市        </a>
+                                                                    </p>
+                                                            <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                                <i class="fa fa-check-circle-o fa-4x"></i>
+                                                                <h1 class="m-b-20">FOUR</h1>
+                                                                <h1 class="m-b-20">
+                                                                    <span class="semi-bold">不同区域的菜系分布</span></h1>   
+                                                                <p>
+                                                                    
+                                                                </p>
+                                                                <h1 class="m-b-20">
+                                                                        <span class="light">新城地区</span></h1>  
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                    </section>
+                                <section class="cbp-so-section">
+                                                        <article class="cbp-so-side cbp-so-side-left text-center middle">
+                                                            <div class="row">
+                                                                    <p>切换地区：
+                                                                            <a href="#武昌">武昌地区        </a>
+                                                                            <a href="#汉口">汉口地区        </a>
+                                                                            <a href="#汉阳">汉阳地区        </a>
+                                                                            <a href="#新城">新城地区        </a>
+                                                                            <a href="#武汉全市">武汉全市        </a>
+                                                                        </p>
+                                                                <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                                        <i class="fa fa-check-circle-o fa-4x"></i>
+                                                                        <h1 class="m-b-20"FOUR</h1>
+                                                                        <h1 class="m-b-20">
+                                                                            <span class="semi-bold">不同区域的菜系分布</span></h1>   
+                                                                        <p>
+                                                                            
+                                                                        </p>
+                                                                        <h1 class="m-b-20">
+                                                                                <span class="light">武汉全市</span></h1>  
+                                                                        <br>
+                                                                </div>
+                                                            </div>
+                                                        </article>
+                                                        <figure class="cbp-so-side cbp-so-side-right">
+                                                                <div id="chart8" style="width: 800px; height: 500px;"></div>
+                                                                <script>
+                                                                    var chart = document.getElementById('chart8');
+                                                                    var myChart = echarts.init(chart);
+                                                                    var option = {
+                                                                            title : {
+                                                                                text: '不同区域的菜系分布',
+                                                                                subtext: '武汉市',
+                                                                                x:'center'
+                                                                            },
+                                                                            tooltip : {
+                                                                                trigger: 'item',
+                                                                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                                                            },
+                                                                            legend: {
+                                                                                x : 'center',
+                                                                                y : 'bottom',
+                                                                                data:['韩国菜','日式小吃','居酒屋','日式铁板烧','日本菜','日料自助','日式快餐','日式面条','日式烧烤/烤肉','日式寿司']
+                                                                            },
+                                                                            toolbox: {
+                                                                                show : true,
+                                                                                feature : {
+                                                                                    mark : {show: true},
+                                                                                    dataView : {show: true, readOnly: false},
+                                                                                    magicType : {
+                                                                                        show: true, 
+                                                                                        type: ['pie', 'funnel']
+                                                                                    },
+                                                                                    restore : {show: true},
+                                                                                    saveAsImage : {show: true}
+                                                                                }
+                                                                            },
+                                                                            calculable : true,
+                                                                            series : [
+                                                                                {
+                                                                                    name:'面积模式',
+                                                                                    type:'pie',
+                                                                                    radius : [40, 150],
+                                                                                    center : ['50%', 240],
+                                                                                    roseType : 'area',
+                                                                                    x: '50%',               // for funnel
+                                                                                    max: 40,                // for funnel
+                                                                                    sort : 'ascending',     // for funnel
+                                                                                    data:[
+                                                                                        {value:92, name:'韩国菜'},
+                                                                                        {value:39, name:'日式小吃'},
+                                                                                        {value:32, name:'居酒屋'},
+                                                                                        {value:134, name:'日式铁板烧'},
+                                                                                        {value:58, name:'日本菜'},
+                                                                                        {value:73, name:'日料自助'},
+                                                                                        {value:45, name:'日式快餐'},
+                                                                                        {value:73, name:'日式面条'},
+                                                                                        {value:63, name:'日式烧烤/烤肉'},
+                                                                                        {value:29, name:'日式寿司'}                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        };
+                                                                        myChart.setOption(option);	
+                                                                </script>
+                                                        
+                                                        </figure>
+                                    </section>
+                                    
+                                <section class="cbp-so-section">
+                                                            <article class="cbp-so-side cbp-so-side-left text-center middle">
+                                                                <div class="row">
+                                                                    <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                                            <i class="fa fa-check-circle-o fa-4x"></i>
+                                                                            <h1 class="m-b-20">FIVE</h1>
+                                                                            <h1 class="m-b-20">
+                                                                                <span class="semi-bold">不同区域各菜系的人均价格</span></h1>   
+                                                                            <p>
+                                                                                
+                                                                            </p>
+                                                                            <h1 class="m-b-20">
+                                                                                    <span class="light">武昌、汉口、汉阳、新城</span></h1>  
+                                                                                <br>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+                                                            <figure class="cbp-so-side cbp-so-side-right">
+                                                                    <div id="chart13" style="width: 900px; height: 450px;"></div>
+                                                                    <script>
+                                                                        var chart = document.getElementById('chart13');
+                                                                        var myChart = echarts.init(chart);
+                                                                        var option = {
+                                                                            title: { 
+                                                                                left: '35%',
+                                                                                text: '不同区域各菜系的人均价格' },
+                                                                            tooltip: { },
+                                                                            legend: { 
+                                                                                y : 'bottom',
+                                                                                data:['武昌地区','汉口地区','汉阳地区','新城地区'] },
+                                                                            xAxis: { 
+                                                                                name: '菜系',
+                                                                                data: [  '韩国菜','日式小吃','居酒屋','日式铁板烧','日本菜','日料自助','日式快餐','日式面条','日式烧烤/烤肉','日式寿司'] },
+                                                                            yAxis: {
+                                                                                name:'人均价格(元)'
+                                                                            },
+                                                                            series: 
+                                                                            [
+                                                                                {
+                                                                                name: '武昌地区',
+                                                                                type: 'bar',
+                                                                                data: [57.7, 64.7, 58.8,68.5,55.5,70.8,60.3,70.1,58.8,86.5]
+                                                                                },
+                                                            
+                                                                                {
+                                                                                name: '汉口地区',
+                                                                                type: 'bar',
+                                                                                data: [60.7,60.6,57.6,79.5,37.4,122.2,65.5,69.3,66,90.7]
+                                                                                },
+                                                            
+                                                                                {
+                                                                                name: '汉阳地区',
+                                                                                type: 'bar',
+                                                                                data: [51.6,97,62.5,59.2,20,0,55.2,48.2,54.1,50]
+                                                                                },
+                                                            
+                                                                                {
+                                                                                name: '新城地区',
+                                                                                type: 'bar',
+                                                                                data: [56.2,55,45.1,56,55,72.3,52.7,54.6,0,203]
+                                                                                }
+                                                            
+                                                                            ]
+                                                                        };
+                                                                        myChart.setOption(option);	
+                                                                    </script>
+                                                            <a name="1"></a>
+                                                            </figure>
+                                    </section>
+
+                                <section class="cbp-so-section">
+                                        <figure class="cbp-so-side cbp-so-side-left">
+                                                <div id="chart9" style="width: 800px; height: 600px;"></div>
+                                                <script>
+                                                    var chart = document.getElementById('chart9');
+                                                    var myChart = echarts.init(chart);
+                                                    var option = {
+                                                        title : {
+                                                            text: '不同区域最有性价比Top10商家',
+                                                            subtext: '武昌地区',
+                                                            x:'center'
+                                                        },
+                                                        tooltip : {
+                                                            trigger: 'item',
+                                                            formatter: "{a} <br/>{b} : {c}%"
+                                                        },
+                                                        toolbox: {
+                                                            show : true,
+                                                            feature : {
+                                                                mark : {show: true},
+                                                                dataView : {show: true, readOnly: false},
+                                                                restore : {show: true},
+                                                                saveAsImage : {show: true}
+                                                            }
+                                                        },
+                            
+                                                        calculable : true,
+                                                        series : [
+                                                            {
+                                                                name:'金字塔',
+                                                                type:'funnel',
+                                                                x : '40%',
+                                                                sort : 'ascending',
+                                                                itemStyle: {
+                                                                    normal: {
+                                                                        // color: 各异,
+                                                                        label: {
+                                                                            position: 'left'
+                                                                        }
+                                                                    }
+                                                                },
+                                                                data:[
+                                                                    {value:1, name:'回转寿司·咖喱屋'},
+                                                                    {value:2, name:'江小八章鱼小丸子（火星美食街总店）'},
+                                                                    {value:3, name:'TeaZone茶语寿司'},
+                                                                    {value:4, name:'妙特寿司（火星美食街店）'},
+                                                                    {value:5, name:'喵的饭团乐园'},
+                                                                    {value:6, name:'江小八章鱼小丸子（户部巷店）'},
+                                                                    {value:7, name:'周小吉'},
+                                                                    {value:8, name:'米棒台湾饭团（风光村店）'},
+                                                                    {value:9, name:'米米饭团寿司店'},
+                                                                    {value:10, name:'争品鲜创作料理（虎泉店）'}
+                                                                ]
+                                                            }
+                                                        ]
+                                                    };
+                                                        myChart.setOption(option);	
+                                                </script>
+                                                <a name="2"></a>
+                                        </figure>
+                                        <article class="cbp-so-side cbp-so-side-right text-center middle">
+                                            <div class="row">
+                                                    <p>切换地区：
+                                                            <a href="#1">武昌地区        </a>
+                                                            <a href="#2">汉口地区        </a>
+                                                            <a href="#3">汉阳地区        </a>
+                                                            <a href="#4">新城地区        </a>
+                                                        </p>
+                                                <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                        <i class="fa fa-check-circle-o fa-4x"></i>
+                                                        <h1 class="m-b-20">SIX</h1>
+                                                        <h1 class="m-b-20">
+                                                            <span class="semi-bold">不同区域最有性价比Top10商家</span></h1>   
+                                                        <p>
+                                                            
+                                                        </p>
+                                                        <h1 class="m-b-20">
+                                                            <span class="light">武昌地区</span></h1>  
+                                                        <br>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </section>
+                                    <section class="cbp-so-section">
+                                            <article class="cbp-so-side cbp-so-side-left text-center middle">
+                                                <div class="row">
+                                                        <p>切换地区：
+                                                                <a href="#1">武昌地区        </a>
+                                                                <a href="#2">汉口地区        </a>
+                                                                <a href="#3">汉阳地区        </a>
+                                                                <a href="#4">新城地区        </a>
+                                                            </p>
+                                                    <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                            <i class="fa fa-check-circle-o fa-4x"></i>
+                                                            <h1 class="m-b-20">SIX</h1>
+                                                            <h1 class="m-b-20">
+                                                                <span class="semi-bold">不同区域最有性价比Top10商家</span></h1>   
+                                                            <p>
+                                                                
+                                                            </p>
+                                                            <h1 class="m-b-20">
+                                                                <span class="light">汉口地区</span></h1>  
+                                                            <br>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                            <figure class="cbp-so-side cbp-so-side-right">
+                                                    <div id="chart10" style="width: 900px; height: 600px;"></div>
+                                                    <script>
+                                                        var chart = document.getElementById('chart10');
+                                                        var myChart = echarts.init(chart);
+                                                        var option = {
+                                                            title : {
+                                                                text: '不同区域最有性价比的Top10商家',
+                                                                subtext: '汉口地区',
+                                                                x:'center'
+                                                            },
+                                                            tooltip : {
+                                                                trigger: 'item',
+                                                                formatter: "{a} <br/>{b} : {c}%"
+                                                            },
+                                                            toolbox: {
+                                                                show : true,
+                                                                feature : {
+                                                                    mark : {show: true},
+                                                                    dataView : {show: true, readOnly: false},
+                                                                    restore : {show: true},
+                                                                    saveAsImage : {show: true}
+                                                                }
+                                                            },
+                                                        
+                                                            calculable : true,
+                                                            series : [
+                                                                {
+                                                                    name:'金字塔',
+                                                                    type:'funnel',
+                                                                    x : '50%',
+                                                                    sort : 'ascending',
+                                                                    itemStyle: {
+                                                                        normal: {
+                                                                            // color: 各异,
+                                                                            label: {
+                                                                                position: 'left'
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    data:[
+                                                                        {value:1, name:'喵咕寿司'},
+                                                                        {value:2, name:'江小八章鱼小丸子（江汉二店）'},
+                                                                        {value:3, name:'一捧手造饭团（happy站台店）'},
+                                                                        {value:4, name:'江小八章鱼小丸子（江汉路店）'},
+                                                                        {value:5, name:'友禾寿司日式料理（二中店）'},
+                                                                        {value:6, name:'初山饭团（后湖大道店）'},
+                                                                        {value:7, name:'一捧手造饭团（武胜凯德店）'},
+                                                                        {value:8, name:'青木寿司（宝丰路店）'},
+                                                                        {value:9, name:'初山饭团（西园店）'},
+                                                                        {value:10, name:'米窝寿司外卖店（一元路店）'}
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        };
+                                                            myChart.setOption(option);	
+                                                    </script>
+                                                    <a name="3"></a>
+                                            </figure>
+                                        </section>
+                                        <section class="cbp-so-section">
+                                                <figure class="cbp-so-side cbp-so-side-left">
+                                                        <div id="chart11" style="width: 900px; height: 600px;"></div>
+                                                        <script>
+                                                            var chart = document.getElementById('chart11');
+                                                            var myChart = echarts.init(chart);
+                                                            var option = {
+                                                                title : {
+                                                                    text: '不同区域最有性价比的Top10商家',
+                                                                    subtext: '汉阳地区',
+                                                                    x:'center'
+                                                                },
+                                                                tooltip : {
+                                                                    trigger: 'item',
+                                                                    formatter: "{a} <br/>{b} : {c}%"
+                                                                },
+                                                                toolbox: {
+                                                                    show : true,
+                                                                    feature : {
+                                                                        mark : {show: true},
+                                                                        dataView : {show: true, readOnly: false},
+                                                                        restore : {show: true},
+                                                                        saveAsImage : {show: true}
+                                                                    }
+                                                                },
+                                                        
+                                                                calculable : true,
+                                                                series : [
+                                                                    {
+                                                                        name:'金字塔',
+                                                                        type:'funnel',
+                                                                        x : '50%',
+                                                                        sort : 'ascending',
+                                                                        itemStyle: {
+                                                                            normal: {
+                                                                                // color: 各异,
+                                                                                label: {
+                                                                                    position: 'left'
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        data:[
+                                                                            {value:1, name:'一捧手造饭团（摩尔城店）'},
+                                                                            {value:2, name:'一捧饭团'},
+                                                                            {value:3, name:'宝岛铁板烧（武汉摩尔城店）'},
+                                                                            {value:4, name:'樱禾外带寿司（海天广场店）'},
+                                                                            {value:5, name:'闲鱼铁板烧'},
+                                                                            {value:6, name:'优米可时尚寿司'},
+                                                                            {value:7, name:'全州拌饭（江腾广场店）'},
+                                                                            {value:8, name:'Lucky韩国潮餐（王家湾店）'},
+                                                                            {value:9, name:'品鲜回转寿司'},
+                                                                            {value:10, name:'火酷山水晶烤肉（江腾广场店）'}
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            };
+                                                                myChart.setOption(option);	
+                                                        </script>
+                                                        <a name="4"></a>
+                                                </figure>
+                                                <article class="cbp-so-side cbp-so-side-right text-center middle">
+                                                    <div class="row">
+                                                            <p>切换地区：
+                                                                    <a href="#1">武昌地区        </a>
+                                                                    <a href="#2">汉口地区        </a>
+                                                                    <a href="#3">汉阳地区        </a>
+                                                                    <a href="#4">新城地区        </a>
+                                                                </p>
+                                                        <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                                <i class="fa fa-check-circle-o fa-4x"></i>
+                                                                <h1 class="m-b-20">SIX</h1>
+                                                                <h1 class="m-b-20">
+                                                                    <span class="semi-bold">不同区域最有性价比Top10商家</span></h1>   
+                                                                <p>
+                                                                    
+                                                                </p>
+                                                                <h1 class="m-b-20">
+                                                                    <span class="light">汉阳地区</span></h1>  
+                                                                <br>
+                                                        </div>
+                                                    </div>
+                                                </article>
+                                            </section>
+                                            <section class="cbp-so-section">
+                                                    <article class="cbp-so-side cbp-so-side-left text-center middle">
+                                                        <div class="row">
+                                                                <p>切换地区：
+                                                                        <a href="#1">武昌地区        </a>
+                                                                        <a href="#2">汉口地区        </a>
+                                                                        <a href="#3">汉阳地区        </a>
+                                                                        <a href="#4">新城地区        </a>
+                                                                    </p>
+                                                            <div class="col-md-12 p-t-80 col-vlg-8 col-vlg-offset-2">
+                                                                    <i class="fa fa-check-circle-o fa-4x"></i>
+                                                                    <h1 class="m-b-20">SIX</h1>
+                                                                    <h1 class="m-b-20">
+                                                                        <span class="semi-bold">不同区域最有性价比Top10商家</span></h1>   
+                                                                    <p>
+                                                                        
+                                                                    </p>
+                                                                    <h1 class="m-b-20">
+                                                                        <span class="light">新城地区</span></h1>  
+                                                                    <br>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                    <figure class="cbp-so-side cbp-so-side-right">
+                                                            <div id="chart12" style="width: 900px; height: 600px;"></div>
+                                                            <script>
+                                                                var chart = document.getElementById('chart12');
+                                                                var myChart = echarts.init(chart);
+                                                                var option = {
+                                                                    title : {
+                                                                        text: '不同区域最有性价比的Top10商家',
+                                                                        subtext: '新城地区',
+                                                                        x:'center'
+                                                                    },
+                                                                    tooltip : {
+                                                                        trigger: 'item',
+                                                                        formatter: "{a} <br/>{b} : {c}%"
+                                                                    },
+                                                                    toolbox: {
+                                                                        show : true,
+                                                                        feature : {
+                                                                            mark : {show: true},
+                                                                            dataView : {show: true, readOnly: false},
+                                                                            restore : {show: true},
+                                                                            saveAsImage : {show: true}
+                                                                        }
+                                                                    },
+                                                                    calculable : true,
+                                                                    series : [
+                                                                        {
+                                                                            name:'金字塔',
+                                                                            type:'funnel',
+                                                                            x : '50%',
+                                                                            sort : 'ascending',
+                                                                            itemStyle: {
+                                                                                normal: {
+                                                                                    // color: 各异,
+                                                                                    label: {
+                                                                                        position: 'left'
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            data:[
+                                                                                {value:1, name:'NO.1寿司'},
+                                                                                {value:2, name:'嘿店寿司'},
+                                                                                {value:3, name:'一捧饭团（永旺梦乐城店）'},
+                                                                                {value:4, name:'初山饭团（荟聚中心店）'},
+                                                                                {value:5, name:'寿司咖喱屋（吴中街店）'},
+                                                                                {value:6, name:'面藏日韩简餐'},
+                                                                                {value:7, name:'樱上槿日式料理'},
+                                                                                {value:8, name:'龙猫料理'},
+                                                                                {value:9, name:'优乐米寿司（海林广场店）'},
+                                                                                {value:10, name:'一乐寿司'}
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                };
+                                                                    myChart.setOption(option);	
+                                                            </script>
+                                                    </figure>
+                                                </section>
+
+
+                                              
+
+        </div>
+        <div class="section black contact-details green-icons">
+                <div class="container">
+                    <div class="row">
+                            <div class="p-t-40 p-b-40 ">
+                                    <h2 class="text-center custom-font">
+                                        @版权归属：李紫薇 夏乐鑫 廖书妍 宋科玉 </h2>
+                                </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <!-- BEGIN CORE JS FRAMEWORK -->
+    <script type="text/javascript" src="assets/plugins/jquery-1.8.3.min.js"></script>
+    <script src="assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- END CORE JS FRAMEWORK -->
+    <!-- BEGIN JS PLUGIN -->
+    <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/modernizr.custom.js"></script>
+    <script src="assets/plugins/waypoints.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/parrallax/js/jquery.parallax-1.1.3.js"></script>
+    <script src="assets/plugins/onescroll/js/classie.js"></script>
+    <script src="assets/plugins/onescroll/js/cbpScroller.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-nicescroll/jquery.nicescroll.min.js"></script>
+    <!-- END JS PLUGIN -->
+    <script>
+        new cbpScroller(document.getElementById('cbp-so-scroller'));
+    </script>
+
